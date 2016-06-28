@@ -5,11 +5,22 @@
     <title>Document</title>
 </head>
 <body>
+
     <?php
     class Cat
     {
-        public $name;
+        protected $name;
         protected $position;
+        
+        public function setName($name)
+        {
+            $this->name=$name;
+        }
+        public function getName()
+        {
+            return $this->name;
+        }
+       
         
         public function __construct($name)
         {
@@ -32,12 +43,15 @@
         
     }
     
+    
     $pet=new Cat('Hello Kitty');
+    
+    echo $pet->getName();
     
 //    echo $pet->name;
     echo "<br>";
 //    $pet->name="Hello Kitty";
-    echo $pet->name;
+//    echo $pet->name;
     echo "<br>";
     
 
